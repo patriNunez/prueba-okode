@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="movie">
+    <ion-item>
+        <ion-thumbnail slot="start">
+            <ion-img [src]="movie.img | imagen"></ion-img>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+            <h2>
+                {{ movie.title }}
+                <span class="date">
+         <ion-note>{{ movie.voteAverage }}</ion-note>
+          <ion-icon [name]=setAverageStars(movie)></ion-icon> 
+        </span>
+            </h2>
+            <h3>Release:
+                <ion-note>{{movie.releaseDate}}</ion-note>
+            </h3>
+        </ion-label>
+    </ion-item>
+
+    <div class="zoomIn-animate">
+        <div class="ion-padding">
+            <h1>{{ movie.title }}</h1>
+            <p>
+                Number of Votes:
+                <ion-note>{{ movie.voteCount }}</ion-note>
+            </p>
+            <p>
+                {{movie.description}}
+            </p>
+        </div>
+    </div>
+</ion-content>

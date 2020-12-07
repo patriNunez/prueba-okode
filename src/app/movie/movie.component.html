@@ -1,0 +1,18 @@
+<ion-item *ngIf="movie" [routerLink]="'/movie/' + movie.id" [detail]="false" class="fadeIn-animate">
+    <ion-avatar slot="start" class="ion-margin-start">
+        <img [src]="movie.img |imagen">
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+        <h2>
+            {{ movie.title }}
+            <span class="date">
+        <ion-note>{{ movie.voteAverage }}</ion-note>
+        <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+        </h2>
+        <ion-note>{{ movie.releaseDate }}</ion-note>
+        <p>
+            {{ movie.description }}
+        </p>
+    </ion-label>
+</ion-item>

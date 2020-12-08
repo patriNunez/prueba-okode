@@ -19,6 +19,15 @@
         </ion-toolbar>
     </ion-header>
 
+    <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select value="1" okText="Go!" cancelText="Dismiss" #selectList (ionChange)="getMovies(selectList.value)">
+            <ion-select-option value="1">Superheros</ion-select-option>
+            <ion-select-option value="2">Miscellaneous</ion-select-option>
+            <ion-select-option value="3">Superheros 2</ion-select-option>
+            <ion-select-option value="4">Fiction/Drama</ion-select-option>
+        </ion-select>
+    </ion-item>
     <ion-list>
         <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
     </ion-list>

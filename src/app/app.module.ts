@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from './interceptors/interceptor.service';
+import { InterceptorService } from './core/interceptors/interceptor.service';
 
 @NgModule({
   declarations: [AppComponent],

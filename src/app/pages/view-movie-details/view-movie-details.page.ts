@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService, Message } from '../services/data.service';
-import { Movie } from '../home/models/Movie';
+import { Movie } from '../../core/models/Movie';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-view-movie-details',
@@ -12,13 +12,13 @@ export class ViewMovieDetailsPage implements OnInit {
   public movie: Movie;
 
   constructor(
-    private data: DataService,
+    private dataService: DataService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.movie = this.data.getMovieById(parseInt(id, 10));
+    this.movie = this.dataService.getMovieById(parseInt(id, 10));
   }
 
   getBackButtonText() {

@@ -4,11 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'movie/:id',
-    loadChildren: () => import('./view-movie-details/view-movie-details.module').then( m => m.ViewMovieDetailsPageModule)
+    loadChildren: () => import('./pages/view-movie-details/view-movie-details.module').then( m => m.ViewMovieDetailsPageModule)
   },
   {
     path: '',

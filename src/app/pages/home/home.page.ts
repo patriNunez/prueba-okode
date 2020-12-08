@@ -1,8 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { DataService, Message } from '../services/data.service';
-import { Movie } from './models/Movie';
+import { Movie } from '../../core/models/Movie';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -25,11 +24,9 @@ export class HomePage implements OnInit{
     }, 3000);
   }
 
-  getMovies() {
-
-    this.dataService.getMovies().subscribe(
+  getMovies(idList?: string) {
+    this.dataService.getMovies(idList).subscribe(
        (movies) => {
-          console.log(movies);
           this.movies = movies;
           this.dataService.saveListLocalStorage(movies);
        },

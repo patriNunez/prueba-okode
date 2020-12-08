@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { MovieComponentModule } from '../message/movie.module';
+import { MovieComponentModule } from '../movie/movie.module';
 
 describe('HomePage', () => {
   let component: HomePage;

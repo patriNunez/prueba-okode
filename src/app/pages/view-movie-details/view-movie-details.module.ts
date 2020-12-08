@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ViewMovieDetailsPageRoutingModule } from './view-movie-details-routing.module';
 import { ViewMovieDetailsPage } from './view-movie-details.page';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
